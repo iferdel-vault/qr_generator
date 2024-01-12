@@ -59,7 +59,7 @@ def generate_qr_code(data, image, label, output):
     else:
         qr_img.save(output)
 
-if __name__ == "__main__":
+def main():
     parser = argparse.ArgumentParser(description='Generate QR code.')
     parser.add_argument('-d', '--data', type=str, help='the data to be encoded in the QR code', required=True)
     parser.add_argument('-i', '--image', type=str, help='the image to be used as logo', required=False)
@@ -68,3 +68,6 @@ if __name__ == "__main__":
     arguments = parser.parse_args()
 
     generate_qr_code(arguments.data, arguments.image, arguments.label, arguments.output)
+
+if __name__ == "__main__":
+    main()
